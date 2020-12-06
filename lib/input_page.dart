@@ -17,6 +17,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
+                    //Male widget
                     child: ReusableCard(
                       onPress: () {
                         setState(() {
@@ -46,6 +48,7 @@ class _InputPageState extends State<InputPage> {
                     flex: 1,
                   ),
                   Expanded(
+                    //female widget
                     child: ReusableCard(
                       onPress: () {
                         setState(() {
@@ -65,6 +68,7 @@ class _InputPageState extends State<InputPage> {
               flex: 1,
             ),
             Expanded(
+              //weight widget with slider
               child: ReusableCard(
                   colour: kActiveCardColor,
                   cardChild: Column(
@@ -113,7 +117,35 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableCard(colour: kActiveCardColor),
+                    //set weight widget
+                    child: ReusableCard(
+                        colour: kActiveCardColor,
+                        cardChild: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              weight.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FloatingActionButton(
+                                  backgroundColor: Color(0xFF4C4F5E),
+                                  child: Icon(Icons.add, color: Colors.white),
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                FloatingActionButton(
+                                  backgroundColor: Color(0xFF4C4F5E),
+                                  child:
+                                      Icon(Icons.remove, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ],
+                        )),
                     flex: 1,
                   ),
                   Expanded(
