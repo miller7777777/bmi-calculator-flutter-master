@@ -162,7 +162,45 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     //age set widget
-                    child: ReusableCard(colour: kActiveCardColor),
+                    child: ReusableCard(
+                        colour: kActiveCardColor,
+                        cardChild: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'AGE',
+                              style: kLabelTextStyle,
+                            ),
+                            Text(
+                              age.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                RoundIconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      age--;
+                                    });
+                                  },
+                                  icon: FontAwesomeIcons.minus,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                RoundIconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  },
+                                  icon: FontAwesomeIcons.plus,
+                                ),
+                              ],
+                            ),
+                          ],
+                        )),
                     flex: 1,
                   ),
                 ],
