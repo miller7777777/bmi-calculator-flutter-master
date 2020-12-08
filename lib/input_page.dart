@@ -125,6 +125,10 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
+                              'WEIGHT',
+                              style: kLabelTextStyle,
+                            ),
+                            Text(
                               weight.toString(),
                               style: kNumberTextStyle,
                             ),
@@ -157,6 +161,7 @@ class _InputPageState extends State<InputPage> {
                     flex: 1,
                   ),
                   Expanded(
+                    //age set widget
                     child: ReusableCard(colour: kActiveCardColor),
                     flex: 1,
                   ),
